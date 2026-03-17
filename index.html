@@ -7,29 +7,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #d1d5db; }
         .glow { background: radial-gradient(circle at center, rgba(255, 215, 0, 0.08) 0%, transparent 70%); }
         .gold-gradient { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+        .step-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+        .step-card:hover { border-color: rgba(251, 191, 36, 0.3); transform: translateY(-5px); }
+        .step-number { position: absolute; right: 20px; top: 10px; font-size: 8rem; font-weight: 800; color: rgba(255,255,255,0.03); pointer-events: none; }
     </style>
 </head>
-<body class="text-gray-300 min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<body class="min-h-screen relative overflow-x-hidden">
 
     <div class="fixed inset-0 glow pointer-events-none"></div>
 
-    <nav class="absolute top-0 w-full p-8 flex justify-between items-center max-w-6xl">
+    <nav class="absolute top-0 w-full p-8 flex justify-between items-center z-50">
         <div class="text-xl font-bold text-white flex items-center gap-2">
             <span class="w-3 h-3 bg-yellow-500 rounded-full"></span> GodAppleDupe
         </div>
         <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-            <a href="#" class="hover:text-white transition">Features</a>
-            <a href="#" class="hover:text-white transition">Install</a>
-            <a href="#" class="hover:text-white transition">FAQ</a>
-            <a href="#" class="hover:text-white transition">GitHub</a>
+            <a href="#install" class="hover:text-white transition">Install</a>
+            <a href="https://github.com/xxisbetter/godapple" target="_blank" class="hover:text-white transition">GitHub</a>
         </div>
-        <button class="bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm hover:bg-white/10 transition">Download</button>
+        <a href="https://github.com/xxisbetter/godapple/raw/refs/heads/main/GodAppleDupe-1.21.4.jar" class="bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm hover:bg-white/10 transition text-white">Download</a>
     </nav>
 
-    <main class="relative z-10 text-center px-4">
+    <section class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs mb-8">
             <span class="text-yellow-500">✦</span> Fabric 1.21.4 · Free · Open Source
         </div>
@@ -44,18 +46,18 @@
         </p>
 
         <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
-            <a href="#" class="gold-gradient text-black font-bold px-8 py-4 rounded-2xl flex items-center gap-2 hover:scale-105 transition shadow-lg shadow-yellow-500/20">
+            <a href="https://github.com/xxisbetter/godapple/raw/refs/heads/main/GodAppleDupe-1.21.4.jar" class="gold-gradient text-black font-bold px-8 py-4 rounded-2xl flex items-center gap-2 hover:scale-105 transition shadow-lg shadow-yellow-500/20">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
                 Download Now
             </a>
-            <button class="bg-white/5 border border-white/10 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 hover:bg-white/10 transition">
+            <a href="#install" class="bg-white/5 border border-white/10 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 hover:bg-white/10 transition cursor-pointer">
                 How to Install
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
-            </button>
+            </a>
         </div>
 
         <div class="flex flex-wrap justify-center gap-3">
@@ -64,13 +66,59 @@
             <span class="px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold">Lightweight</span>
             <span class="px-4 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold">No Dependencies</span>
         </div>
-    </main>
+    </section>
 
-    <div class="absolute bottom-10 animate-bounce text-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-    </div>
+    <section id="install" class="relative z-10 py-24 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="px-4 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-semibold uppercase tracking-widest">Installation</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-6">Up and running in <span class="text-transparent bg-clip-text gold-gradient">3 simple steps</span></h2>
+            <p class="text-gray-500 mt-4">No complex setup. No config. Just drop and play.</p>
+        </div>
 
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="step-card rounded-3xl p-8 relative overflow-hidden">
+                <span class="step-number">1</span>
+                <div class="bg-pink-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                </div>
+                <p class="text-pink-400 text-xs font-bold uppercase mb-2">Step 1</p>
+                <h3 class="text-xl font-bold text-white mb-3">Download the Mod</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Click the download button to grab the GodAppleDupe .jar file. It's tiny and ready to use.</p>
+            </div>
+
+            <div class="step-card rounded-3xl p-8 relative overflow-hidden">
+                <span class="step-number">2</span>
+                <div class="bg-pink-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5" />
+                    </svg>
+                </div>
+                <p class="text-pink-400 text-xs font-bold uppercase mb-2">Step 2</p>
+                <h3 class="text-xl font-bold text-white mb-3">Verify the File</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Ensure you are using the correct version (1.21.4). No extra loaders are needed besides Fabric.</p>
+            </div>
+
+            <div class="step-card rounded-3xl p-8 relative overflow-hidden">
+                <span class="step-number">3</span>
+                <div class="bg-pink-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                    </svg>
+                </div>
+                <p class="text-pink-400 text-xs font-bold uppercase mb-2">Step 3</p>
+                <h3 class="text-xl font-bold text-white mb-3">Add to Mods Folder</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Place the .jar into your Minecraft mods folder, then launch with Fabric 1.21.4.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-600 text-sm border-t border-white/5 mx-8">
+        &copy; 2026 GodAppleDupe. Not an official Minecraft product.
+    </footer>
+
+</body>
+</html>
 </body>
 </html>
